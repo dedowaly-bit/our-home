@@ -6,12 +6,19 @@
 ## التشغيل محلياً
 
 ```bash
-npm install
 node server.js
 # ثم افتح http://localhost:3000
 ```
 
 البيانات تُحفظ افتراضياً في `data/db.json`.
+
+## نسخة GitHub Pages (بدون سيرفر)
+
+`store.js` بيدعم **وضع بدون سيرفر**: لو اتفتحت الصفحة من GitHub Pages (أو أي استضافة ثابتة)،
+البيانات كلها بتتحفظ في `localStorage` بالمتصفح وبتقدر تستخدم كل المزايا من غير أي سيرفر.
+تم النشر بضغطة عمل جاهزة في `.github/workflows/pages.yml`.
+
+## النشر على Render (لسيرفر حقيقي + PostgreSQL)
 
 ### استخدم PostgreSQL بدلاً من الملف
 
@@ -40,5 +47,6 @@ node test-api.js
 
 - `server.js` — سيرفر HTTP + REST API كامل
 - `public/` — واجهة SPA (بدون أي مكتبات خارجية)
+- `.github/workflows/pages.yml` — نشر GitHub Pages من مجلد `public`
 - `render.yaml` — إعداد Render Blueprint
 - `data/db.json` — قاعدة بيانات الملف (محلياً)
