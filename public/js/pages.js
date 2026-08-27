@@ -639,7 +639,7 @@ window.Pages = (function () {
           h("div", { class: "badge blue", style: { fontSize: "20px", padding: "10px 16px", letterSpacing: "2px" } }, fam.inviteCode),
           h("button", { class: "btn sm", onclick: () => { navigator.clipboard && navigator.clipboard.writeText(fam.inviteCode); UI.toast("✓","ok"); } }, t("settings.copy"))
         ),
-        h("p", { class: "small muted", style: { marginTop: "8px" } }, t("settings.inviteCode") + ": " + location.origin + "/#/onboarding")
+        h("p", { class: "small muted", style: { marginTop: "8px" } }, t("settings.inviteCode") + ": " + location.href.split("#")[0] + "#/onboarding")
       ));
 
       // members
