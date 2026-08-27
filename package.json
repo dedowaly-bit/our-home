@@ -1,0 +1,17 @@
+{
+  "name": "our-home",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Our Home — family budget tracker (vanilla Node + JSON/PostgreSQL storage)",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "dependencies": {
+    "pg": "^8.13.1"
+  }
+}
