@@ -1,0 +1,6 @@
+node_modules/
+npm-install.*
+*.log
+.env
+data/db.json
+.DS_Store
