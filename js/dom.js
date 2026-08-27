@@ -75,7 +75,19 @@ window.UI = (function () {
     }
     children.flat().forEach((c) => {
       if (c == null || c === false) return;
-      el.appendChild(typeof c === "string" || typeof c === "number" ? document.createTextNode(String(c)) : c);
+      if (typeof c === "string") {
+        if (/^\s*</.test(c)) {
+          const tmp = document.createElement("span");
+          tmp.innerHTML = c;
+          while (tmp.firstChild) el.appendChild(tmp.firstChild);
+        } else {
+          el.appendChild(document.createTextNode(c));
+        }
+      } else if (typeof c === "number") {
+        el.appendChild(document.createTextNode(String(c)));
+      } else {
+        el.appendChild(c);
+      }
     });
     return el;
   }
